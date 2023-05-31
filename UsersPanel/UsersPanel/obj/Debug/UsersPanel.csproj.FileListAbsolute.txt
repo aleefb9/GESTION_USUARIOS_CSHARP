@@ -19,3 +19,4 @@ C:\Users\alejandro.fernandez\source\repos\UsersPanel\UsersPanel\bin\Debug\Entity
 C:\Users\alejandro.fernandez\source\repos\UsersPanel\UsersPanel\bin\Debug\System.Data.SQLite.xml
 C:\Users\alejandro.fernandez\source\repos\UsersPanel\UsersPanel\obj\Debug\UsersPanel.csproj.CopyComplete
 C:\Users\alejandro.fernandez\source\repos\UsersPanel\UsersPanel\obj\Debug\UsersPanel.UsersPanel.resources
+C:\Users\alejandro.fernandez\source\repos\UsersPanel\UsersPanel\obj\Debug\UsersPanel.Form2.resources

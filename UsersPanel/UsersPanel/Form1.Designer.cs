@@ -52,15 +52,16 @@ namespace UsersPanel
             this.txtbuscador = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.buttonanotaciones = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -199,7 +200,7 @@ namespace UsersPanel
             this.dgvusuarios.Name = "dgvusuarios";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -208,10 +209,12 @@ namespace UsersPanel
             this.dgvusuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvusuarios.RowHeadersVisible = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             this.dgvusuarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvusuarios.Size = new System.Drawing.Size(1055, 385);
+            this.dgvusuarios.Size = new System.Drawing.Size(1055, 343);
             this.dgvusuarios.TabIndex = 25;
+            this.dgvusuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvusuarios_CellContentClick);
             // 
             // label12
             // 
@@ -219,7 +222,7 @@ namespace UsersPanel
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
             this.label12.Font = new System.Drawing.Font("Nirmala UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label12.Location = new System.Drawing.Point(472, 7);
+            this.label12.Location = new System.Drawing.Point(463, 7);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(613, 50);
             this.label12.TabIndex = 30;
@@ -301,6 +304,17 @@ namespace UsersPanel
             this.comboBox1.TabIndex = 36;
             this.comboBox1.Text = "Nombre";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
+            this.pictureBox4.Image = global::UsersPanel.Properties.Resources.logo;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 60);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(74, 66);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 40;
+            this.pictureBox4.TabStop = false;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
@@ -331,16 +345,20 @@ namespace UsersPanel
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox4
+            // buttonanotaciones
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.Image = global::UsersPanel.Properties.Resources.logo;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 60);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(74, 66);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 40;
-            this.pictureBox4.TabStop = false;
+            this.buttonanotaciones.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonanotaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonanotaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonanotaciones.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonanotaciones.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonanotaciones.Location = new System.Drawing.Point(21, 492);
+            this.buttonanotaciones.Name = "buttonanotaciones";
+            this.buttonanotaciones.Size = new System.Drawing.Size(186, 36);
+            this.buttonanotaciones.TabIndex = 41;
+            this.buttonanotaciones.Text = "VER ANOTACIONES";
+            this.buttonanotaciones.UseVisualStyleBackColor = false;
+            this.buttonanotaciones.Click += new System.EventHandler(this.buttonanotaciones_Click);
             // 
             // UsersPanel
             // 
@@ -348,6 +366,7 @@ namespace UsersPanel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1462, 559);
+            this.Controls.Add(this.buttonanotaciones);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtinicio);
@@ -375,10 +394,10 @@ namespace UsersPanel
             this.Text = "UsersPanel";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,6 +424,7 @@ namespace UsersPanel
         private PictureBox pictureBox3;
         private PictureBox pictureBox1;
         private PictureBox pictureBox4;
+        private Button buttonanotaciones;
     }
 }
 

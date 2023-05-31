@@ -20,7 +20,6 @@ namespace UsersPanel
 {
     public partial class UsersPanel : Form
     {
-
         private static string cadena = ConfigurationManager.ConnectionStrings["cadena"].ConnectionString;
         public UsersPanel()
         {
@@ -165,7 +164,23 @@ namespace UsersPanel
 
                 dgvusuarios.DataSource = data;
                 dgvusuarios.DataMember = "Usuarios";
+                dgvusuarios.AllowUserToAddRows = false;
             }
+        }
+
+        private void dgvusuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtidusuario.Text = dgvusuarios.CurrentRow.Cells[0].Value.ToString();
+            txtnombre.Text = dgvusuarios.CurrentRow.Cells[1].Value.ToString();
+            txtdepartamento.Text = dgvusuarios.CurrentRow.Cells[2].Value.ToString();
+            txtinicio.Text = dgvusuarios.CurrentRow.Cells[5].Value.ToString();
+        }
+
+        private void buttonanotaciones_Click(object sender, EventArgs e)
+        {
+            Form2 ventana2 = new Form2();
+            this.Hide();
+            ventana2.Show();
         }
     }
 }
