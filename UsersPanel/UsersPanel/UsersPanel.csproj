@@ -79,8 +79,16 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logica\ArchivoLogica.cs" />
     <Compile Include="Logica\NotaLogica.cs" />
     <Compile Include="Logica\UsuarioLogica.cs" />
+    <Compile Include="Modelo\Archivo.cs" />
     <Compile Include="Modelo\Nota.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Program.cs" />
@@ -90,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +125,10 @@
     <None Include="Resources\logotipo-mecalux.png" />
     <None Include="Resources\logotipo-mecalux1.png" />
     <None Include="Resources\logo.jpg" />
+    <None Include="Resources\clear.png" />
+    <None Include="Resources\free-file-icon-1453-thumb.png" />
+    <None Include="Resources\subir.jpg" />
+    <None Include="Resources\subir.png" />
     <Content Include="UsersDB.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

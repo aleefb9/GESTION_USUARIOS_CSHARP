@@ -21,6 +21,7 @@ namespace UsersPanel
     public partial class UsersPanel : Form
     {
         private static string cadena = ConfigurationManager.ConnectionStrings["cadena"].ConnectionString;
+
         public UsersPanel()
         {
             InitializeComponent();
@@ -147,25 +148,32 @@ namespace UsersPanel
 
         private void txtbuscador_TextChanged(object sender, EventArgs e)
         {
-            if(txtbuscador.Text ==  null || txtbuscador.Text == "")
+            try
             {
-                mostrar_usuarios();
+                if (txtbuscador.Text == null || txtbuscador.Text == "")
+                {
+                    mostrar_usuarios();
+                }
+                else
+                {
+                    SQLiteConnection conexion = new SQLiteConnection(cadena);
+                    String query = "SELECT * FROM Usuarios WHERE " + comboBox1.Text + " LIKE '%" + txtbuscador.Text + "%'";
+                    SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, conexion);
+
+                    conexion.Open();
+
+                    DataSet data = new DataSet();
+                    adapter.Fill(data, "Usuarios");
+
+                    dgvusuarios.DataSource = data;
+                    dgvusuarios.DataMember = "Usuarios";
+                    dgvusuarios.AllowUserToAddRows = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                SQLiteConnection conexion = new SQLiteConnection(cadena);
-                String query = "SELECT * FROM Usuarios WHERE " + comboBox1.Text + " LIKE '%" + txtbuscador.Text + "%'";
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, conexion);
-
-                conexion.Open();
-
-                DataSet data = new DataSet();
-                adapter.Fill(data, "Usuarios");
-
-                dgvusuarios.DataSource = data;
-                dgvusuarios.DataMember = "Usuarios";
-                dgvusuarios.AllowUserToAddRows = false;
-            }
+                MessageBox.Show("El valor introducido es inválido.", "VALOR NO VÁLIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         private void dgvusuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -181,6 +189,18 @@ namespace UsersPanel
             Form2 ventana2 = new Form2();
             this.Hide();
             ventana2.Show();
+        }
+
+        private void btnarchivos_Click(object sender, EventArgs e)
+        {
+            Form3 ventana3 = new Form3();
+            this.Hide();
+            ventana3.Show();
+        }
+
+        private void iconolimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
     }
 }

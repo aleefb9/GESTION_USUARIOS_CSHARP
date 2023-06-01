@@ -23,7 +23,6 @@ namespace UsersPanel
         {
             InitializeComponent();
             llenarComboBox();
-            
         }
 
         private void llenarComboBox()
@@ -51,27 +50,34 @@ namespace UsersPanel
 
         private void btnguardarnota_Click(object sender, EventArgs e)
         {
-            Nota objeto = new Nota()
+            try
             {
-                Titulo = txttitulo.Text,
-                Descripcion = txtdescripcion.Text,
-                IdUsuario = int.Parse(comboBox1.SelectedValue.ToString())
-            };
+                Nota objeto = new Nota()
+                {
+                    Titulo = txttitulo.Text,
+                    Descripcion = txtdescripcion.Text,
+                    IdUsuario = int.Parse(comboBox1.SelectedValue.ToString())
+                };
 
-            if (objeto.Titulo == "" || objeto.Descripcion == "")
+                if (objeto.Titulo == "" || objeto.Descripcion == "")
+                {
+                    MessageBox.Show("Debe rellenar los campos obligatorios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    bool respuesta = NotaLogica.Instancia.Guardar(objeto);
+
+                    if (respuesta)
+                    {
+                        limpiar();
+                        mostrar_notas();
+                        MessageBox.Show("Nota añadida correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Debe rellenar los campos obligatorios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                bool respuesta = NotaLogica.Instancia.Guardar(objeto);
-
-                if (respuesta)
-                {
-                    limpiar();
-                    mostrar_notas();
-                    MessageBox.Show("Nota añadida correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
             }
         }
 
@@ -133,48 +139,6 @@ namespace UsersPanel
             }
         }
 
-        private void txtbuscadornotas_TextChanged(object sender, EventArgs e)
-        {
-            if (txtbuscadornotas.Text == null || txtbuscadornotas.Text == "")
-            {
-                mostrar_notas();
-            }
-            else
-            {
-                SQLiteConnection conexion = new SQLiteConnection(cadena);
-                String query = "SELECT IdNota, Titulo, Descripcion, Nombre FROM Notas INNER JOIN Usuarios ON Notas.IdUsuario = Usuarios.Id WHERE " + comboBox33.Text + " LIKE '%" + txtbuscadornotas.Text + "%'";
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, conexion);
-
-                conexion.Open();
-
-                DataSet data = new DataSet();
-                adapter.Fill(data, "Notas");
-
-                dgvnotas.DataSource = data;
-                dgvnotas.DataMember = "Notas";
-                dgvnotas.Columns[0].Width = 100;
-                dgvnotas.Columns[1].Width = 150;
-                dgvnotas.Columns[3].Width = 200;
-                dgvnotas.AllowUserToAddRows = false;
-            }
-        }
-
-        private void dgvnotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtidnota.Text = dgvnotas.CurrentRow.Cells[0].Value.ToString();
-            txttitulo.Text = dgvnotas.CurrentRow.Cells[1].Value.ToString();
-            txtdescripcion.Text = dgvnotas.CurrentRow.Cells[2].Value.ToString();
-            comboBox1.SelectedValue = dgvnotas.CurrentRow.Cells[3].Value.ToString();
-            dgvnotas.Columns[3].Visible = false;
-        }
-
-        private void buttonregistros_Click(object sender, EventArgs e)
-        {
-            UsersPanel ventana1 = new UsersPanel();
-            this.Hide();
-            ventana1.Show();
-        }
-
         private void btneliminarnota_Click(object sender, EventArgs e)
         {
             try
@@ -205,6 +169,67 @@ namespace UsersPanel
             {
                 MessageBox.Show("Debe de introducir un identificador para ELIMINAR", "Introduzca ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtbuscadornotas_TextChanged(object sender, EventArgs e)
+        {
+            try 
+            { 
+                if (txtbuscadornotas.Text == null || txtbuscadornotas.Text == "")
+                {
+                    mostrar_notas();
+                }
+                else
+                {
+                    SQLiteConnection conexion = new SQLiteConnection(cadena);
+                    String query = "SELECT IdNota, Titulo, Descripcion, Nombre FROM Notas INNER JOIN Usuarios ON Notas.IdUsuario = Usuarios.Id WHERE " + comboBox33.Text + " LIKE '%" + txtbuscadornotas.Text + "%'";
+                    SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, conexion);
+
+                    conexion.Open();
+
+                    DataSet data = new DataSet();
+                    adapter.Fill(data, "Notas");
+
+                    dgvnotas.DataSource = data;
+                    dgvnotas.DataMember = "Notas";
+                    dgvnotas.Columns[0].Width = 100;
+                    dgvnotas.Columns[1].Width = 150;
+                    dgvnotas.Columns[3].Width = 200;
+                    dgvnotas.AllowUserToAddRows = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El valor introducido es inválido.", "VALOR NO VÁLIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvnotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtidnota.Text = dgvnotas.CurrentRow.Cells[0].Value.ToString();
+            txttitulo.Text = dgvnotas.CurrentRow.Cells[1].Value.ToString();
+            txtdescripcion.Text = dgvnotas.CurrentRow.Cells[2].Value.ToString();
+            comboBox1.SelectedValue = dgvnotas.CurrentRow.Cells[3].Value.ToString();
+            dgvnotas.Columns[3].Visible = false;
+        }
+
+        private void buttonregistros_Click(object sender, EventArgs e)
+        {
+            UsersPanel ventana1 = new UsersPanel();
+            this.Hide();
+            ventana1.Show();
+        }
+
+        private void btnarchivos_Click(object sender, EventArgs e)
+        {
+            Form3 ventana3 = new Form3();
+            this.Hide();
+            ventana3.Show();
+        }
+
+        private void iconolimpiar2_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
     }
 }

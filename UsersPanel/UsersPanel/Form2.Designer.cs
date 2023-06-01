@@ -35,8 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label72 = new System.Windows.Forms.Label();
-            this.pictureBox90 = new System.Windows.Forms.PictureBox();
-            this.pictureBox55 = new System.Windows.Forms.PictureBox();
             this.txttitulo = new System.Windows.Forms.TextBox();
             this.buttonregistros = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
@@ -48,18 +46,23 @@
             this.label56 = new System.Windows.Forms.Label();
             this.dgvnotas = new System.Windows.Forms.DataGridView();
             this.btnguardarnota = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtbuscadornotas = new System.Windows.Forms.TextBox();
             this.comboBox33 = new System.Windows.Forms.ComboBox();
             this.btneditarnotas = new System.Windows.Forms.Button();
             this.btneliminarnota = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox90)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
+            this.btnarchivos = new System.Windows.Forms.Button();
+            this.iconolimpiar2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox55 = new System.Windows.Forms.PictureBox();
+            this.pictureBox90 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvnotas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox90)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label72
@@ -74,32 +77,11 @@
             this.label72.TabIndex = 39;
             this.label72.Text = "PANEL DE GESTIÓN DE USUARIOS";
             // 
-            // pictureBox90
-            // 
-            this.pictureBox90.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
-            this.pictureBox90.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox90.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox90.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox90.Name = "pictureBox90";
-            this.pictureBox90.Size = new System.Drawing.Size(1462, 60);
-            this.pictureBox90.TabIndex = 40;
-            this.pictureBox90.TabStop = false;
-            // 
-            // pictureBox55
-            // 
-            this.pictureBox55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.pictureBox55.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox55.Location = new System.Drawing.Point(1094, 60);
-            this.pictureBox55.Name = "pictureBox55";
-            this.pictureBox55.Size = new System.Drawing.Size(368, 499);
-            this.pictureBox55.TabIndex = 41;
-            this.pictureBox55.TabStop = false;
-            // 
             // txttitulo
             // 
             this.txttitulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txttitulo.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttitulo.Location = new System.Drawing.Point(1114, 199);
+            this.txttitulo.Location = new System.Drawing.Point(1116, 199);
             this.txttitulo.Multiline = true;
             this.txttitulo.Name = "txttitulo";
             this.txttitulo.Size = new System.Drawing.Size(327, 34);
@@ -116,7 +98,7 @@
             this.buttonregistros.Name = "buttonregistros";
             this.buttonregistros.Size = new System.Drawing.Size(186, 36);
             this.buttonregistros.TabIndex = 43;
-            this.buttonregistros.Text = "VER REGISTROS";
+            this.buttonregistros.Text = "REGISTROS";
             this.buttonregistros.UseVisualStyleBackColor = false;
             this.buttonregistros.Click += new System.EventHandler(this.buttonregistros_Click);
             // 
@@ -204,6 +186,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvnotas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvnotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvnotas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvnotas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
             this.dgvnotas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvnotas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -242,9 +225,11 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvnotas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvnotas.RowHeadersVisible = false;
+            this.dgvnotas.RowHeadersWidth = 20;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
             this.dgvnotas.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvnotas.Size = new System.Drawing.Size(1055, 343);
             this.dgvnotas.TabIndex = 51;
@@ -264,26 +249,6 @@
             this.btnguardarnota.Text = "GUARDAR";
             this.btnguardarnota.UseVisualStyleBackColor = false;
             this.btnguardarnota.Click += new System.EventHandler(this.btnguardarnota_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pictureBox1.Location = new System.Drawing.Point(-8, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1470, 66);
-            this.pictureBox1.TabIndex = 53;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.Image = global::UsersPanel.Properties.Resources.logo;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 60);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(74, 66);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 54;
-            this.pictureBox4.TabStop = false;
             // 
             // label5
             // 
@@ -323,9 +288,9 @@
             "Nombre"});
             this.comboBox33.Location = new System.Drawing.Point(929, 80);
             this.comboBox33.Name = "comboBox33";
-            this.comboBox33.Size = new System.Drawing.Size(121, 28);
+            this.comboBox33.Size = new System.Drawing.Size(128, 28);
             this.comboBox33.TabIndex = 57;
-            this.comboBox33.Text = "Nombre";
+            this.comboBox33.Text = "Titulo";
             // 
             // btneditarnotas
             // 
@@ -357,12 +322,83 @@
             this.btneliminarnota.UseVisualStyleBackColor = false;
             this.btneliminarnota.Click += new System.EventHandler(this.btneliminarnota_Click);
             // 
+            // btnarchivos
+            // 
+            this.btnarchivos.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnarchivos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnarchivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnarchivos.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnarchivos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnarchivos.Location = new System.Drawing.Point(226, 492);
+            this.btnarchivos.Name = "btnarchivos";
+            this.btnarchivos.Size = new System.Drawing.Size(186, 36);
+            this.btnarchivos.TabIndex = 61;
+            this.btnarchivos.Text = "ARCHIVOS";
+            this.btnarchivos.UseVisualStyleBackColor = false;
+            this.btnarchivos.Click += new System.EventHandler(this.btnarchivos_Click);
+            // 
+            // iconolimpiar2
+            // 
+            this.iconolimpiar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.iconolimpiar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconolimpiar2.Image = global::UsersPanel.Properties.Resources.clear;
+            this.iconolimpiar2.Location = new System.Drawing.Point(1420, 66);
+            this.iconolimpiar2.Name = "iconolimpiar2";
+            this.iconolimpiar2.Size = new System.Drawing.Size(34, 34);
+            this.iconolimpiar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconolimpiar2.TabIndex = 60;
+            this.iconolimpiar2.TabStop = false;
+            this.iconolimpiar2.Click += new System.EventHandler(this.iconolimpiar2_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
+            this.pictureBox4.Image = global::UsersPanel.Properties.Resources.logo;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 60);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(74, 66);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 54;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox55
+            // 
+            this.pictureBox55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.pictureBox55.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox55.Location = new System.Drawing.Point(1094, 60);
+            this.pictureBox55.Name = "pictureBox55";
+            this.pictureBox55.Size = new System.Drawing.Size(368, 499);
+            this.pictureBox55.TabIndex = 41;
+            this.pictureBox55.TabStop = false;
+            // 
+            // pictureBox90
+            // 
+            this.pictureBox90.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
+            this.pictureBox90.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox90.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox90.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox90.Name = "pictureBox90";
+            this.pictureBox90.Size = new System.Drawing.Size(1462, 60);
+            this.pictureBox90.TabIndex = 40;
+            this.pictureBox90.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pictureBox1.Location = new System.Drawing.Point(-8, 60);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1470, 66);
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1462, 559);
+            this.Controls.Add(this.btnarchivos);
+            this.Controls.Add(this.iconolimpiar2);
             this.Controls.Add(this.btneliminarnota);
             this.Controls.Add(this.btneditarnotas);
             this.Controls.Add(this.comboBox33);
@@ -389,11 +425,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UsersPanel";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox90)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvnotas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox55)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox90)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -422,5 +459,7 @@
         private System.Windows.Forms.ComboBox comboBox33;
         private System.Windows.Forms.Button btneditarnotas;
         private System.Windows.Forms.Button btneliminarnota;
+        private System.Windows.Forms.PictureBox iconolimpiar2;
+        private System.Windows.Forms.Button btnarchivos;
     }
 }
