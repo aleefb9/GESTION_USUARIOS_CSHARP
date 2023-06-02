@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Security.Policy;
@@ -62,6 +63,11 @@ namespace UsersPanel
             txtruta.Text = rutaArchivo;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Process.Start(txtruta.Text);
+        }
+
         private void btnguardararchivo_Click(object sender, EventArgs e)
         {
             try
@@ -117,6 +123,9 @@ namespace UsersPanel
         private void Form3_Load(object sender, EventArgs e)
         {
             mostrar_archivos();
+
+            this.txtruta.AutoSize = false;
+            this.txtruta.Size = new System.Drawing.Size(291, 34);
         }
 
         private void btneditararchivos_Click(object sender, EventArgs e)
@@ -214,17 +223,34 @@ namespace UsersPanel
             }
             catch (Exception ex)
             {
-                MessageBox.Show("El valor introducido es inválido.", "VALOR NO VÁLIDO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El valor introducido es inválido.", "valor no válido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void dgvarchivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtidarchivo.Text = dgvarchivos.CurrentRow.Cells[0].Value.ToString();
-            txtnombrearchivo.Text = dgvarchivos.CurrentRow.Cells[1].Value.ToString();
-            txtruta.Text = dgvarchivos.CurrentRow.Cells[2].Value.ToString();
-            comboBox1.SelectedValue = dgvarchivos.CurrentRow.Cells[3].Value.ToString();
-            dgvarchivos.Columns[3].Visible = false;
+            try
+            {
+                txtidarchivo.Text = dgvarchivos.CurrentRow.Cells[0].Value.ToString();
+                txtnombrearchivo.Text = dgvarchivos.CurrentRow.Cells[1].Value.ToString();
+                txtruta.Text = dgvarchivos.CurrentRow.Cells[2].Value.ToString();
+                comboBox1.SelectedValue = dgvarchivos.CurrentRow.Cells[3].Value.ToString();
+                dgvarchivos.Columns[3].Visible = false;
+
+                if (e.ColumnIndex == this.dgvarchivos.Columns["Ruta"].Index)
+                {
+                    Process.Start(dgvarchivos.CurrentRow.Cells[2].Value.ToString());
+                }
+            }
+            catch (Exception ex) {}
+        }
+
+        private void dgvarchivos_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvarchivos.Columns[e.ColumnIndex].Name == "Ruta")
+            {
+                e.CellStyle.ForeColor = Color.Blue;
+            }
         }
 
         private void btnregistros_Click(object sender, EventArgs e)

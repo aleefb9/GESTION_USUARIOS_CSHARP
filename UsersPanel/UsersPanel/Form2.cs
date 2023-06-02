@@ -206,11 +206,15 @@ namespace UsersPanel
 
         private void dgvnotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtidnota.Text = dgvnotas.CurrentRow.Cells[0].Value.ToString();
-            txttitulo.Text = dgvnotas.CurrentRow.Cells[1].Value.ToString();
-            txtdescripcion.Text = dgvnotas.CurrentRow.Cells[2].Value.ToString();
-            comboBox1.SelectedValue = dgvnotas.CurrentRow.Cells[3].Value.ToString();
-            dgvnotas.Columns[3].Visible = false;
+            try
+            {
+                txtidnota.Text = dgvnotas.CurrentRow.Cells[0].Value.ToString();
+                txttitulo.Text = dgvnotas.CurrentRow.Cells[1].Value.ToString();
+                txtdescripcion.Text = dgvnotas.CurrentRow.Cells[2].Value.ToString();
+                comboBox1.SelectedValue = dgvnotas.CurrentRow.Cells[3].Value.ToString();
+                dgvnotas.Columns[3].Visible = false;
+            }
+            catch (Exception ex) { }
         }
 
         private void buttonregistros_Click(object sender, EventArgs e)

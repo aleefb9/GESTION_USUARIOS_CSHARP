@@ -58,6 +58,7 @@
             this.btneditararchivos = new System.Windows.Forms.Button();
             this.btneliminararchivos = new System.Windows.Forms.Button();
             this.comboBox33 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionararchivo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -147,9 +148,8 @@
             this.txtruta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtruta.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtruta.Location = new System.Drawing.Point(1114, 275);
-            this.txtruta.Multiline = true;
             this.txtruta.Name = "txtruta";
-            this.txtruta.Size = new System.Drawing.Size(291, 34);
+            this.txtruta.Size = new System.Drawing.Size(291, 22);
             this.txtruta.TabIndex = 49;
             // 
             // btnseleccionararchivo
@@ -258,7 +258,7 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1114, 363);
+            this.comboBox1.Location = new System.Drawing.Point(1114, 383);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(329, 29);
             this.comboBox1.TabIndex = 55;
@@ -269,7 +269,7 @@
             this.label56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
             this.label56.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label56.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label56.Location = new System.Drawing.Point(1110, 339);
+            this.label56.Location = new System.Drawing.Point(1110, 359);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(351, 21);
             this.label56.TabIndex = 56;
@@ -356,6 +356,7 @@
             this.dgvarchivos.Size = new System.Drawing.Size(1055, 343);
             this.dgvarchivos.TabIndex = 63;
             this.dgvarchivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvarchivos_CellContentClick);
+            this.dgvarchivos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvarchivos_CellFormatting_1);
             // 
             // btneditararchivos
             // 
@@ -399,6 +400,7 @@
             this.comboBox33.ItemHeight = 20;
             this.comboBox33.Items.AddRange(new object[] {
             "NombreArchivo",
+            "Ruta",
             "Nombre"});
             this.comboBox33.Location = new System.Drawing.Point(929, 80);
             this.comboBox33.Name = "comboBox33";
@@ -406,12 +408,28 @@
             this.comboBox33.TabIndex = 66;
             this.comboBox33.Text = "NombreArchivo";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(1114, 310);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(327, 29);
+            this.button1.TabIndex = 67;
+            this.button1.Text = "EXAMINAR";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1462, 559);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox33);
             this.Controls.Add(this.btneliminararchivos);
             this.Controls.Add(this.btneditararchivos);
@@ -480,5 +498,6 @@
         private System.Windows.Forms.Button btneditararchivos;
         private System.Windows.Forms.Button btneliminararchivos;
         private System.Windows.Forms.ComboBox comboBox33;
+        private System.Windows.Forms.Button button1;
     }
 }
