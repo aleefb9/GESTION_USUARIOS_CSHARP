@@ -91,7 +91,6 @@ namespace UsersPanel
                     {
                         limpiar();
                         mostrar_archivos();
-                        MessageBox.Show("Archivo adjuntado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -152,7 +151,6 @@ namespace UsersPanel
                     {
                         limpiar();
                         mostrar_archivos();
-                        MessageBox.Show("Nota " + txtidarchivo.Text + " editado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -180,7 +178,6 @@ namespace UsersPanel
                     {
                         limpiar();
                         mostrar_archivos();
-                        MessageBox.Show("Archivo borrado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else if (result == DialogResult.Cancel)

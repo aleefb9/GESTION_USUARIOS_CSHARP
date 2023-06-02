@@ -71,7 +71,6 @@ namespace UsersPanel
                     {
                         limpiar();
                         mostrar_notas();
-                        MessageBox.Show("Nota añadida correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -129,7 +128,6 @@ namespace UsersPanel
                     {
                         limpiar();
                         mostrar_notas();
-                        MessageBox.Show("Nota " + txtidnota.Text + " editado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -157,7 +155,6 @@ namespace UsersPanel
                     {
                         limpiar();
                         mostrar_notas();
-                        MessageBox.Show("Nota borrada correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else if (result == DialogResult.Cancel)

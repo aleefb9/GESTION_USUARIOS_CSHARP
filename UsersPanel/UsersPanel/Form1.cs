@@ -55,7 +55,6 @@ namespace UsersPanel
                 {
                     limpiar();
                     mostrar_usuarios();
-                    MessageBox.Show("Usuario añadido correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -105,7 +104,6 @@ namespace UsersPanel
                     {
                         limpiar();
                         mostrar_usuarios();
-                        MessageBox.Show("Usuario " + txtidusuario.Text + " editado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -132,7 +130,6 @@ namespace UsersPanel
                     {
                         limpiar();
                         mostrar_usuarios();
-                        MessageBox.Show("Usuario borrado correctamente", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else if (result == DialogResult.Cancel)
