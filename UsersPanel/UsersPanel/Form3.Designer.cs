@@ -41,31 +41,33 @@
             this.txtbuscadorarchivos = new System.Windows.Forms.TextBox();
             this.txtnombrearchivo = new System.Windows.Forms.TextBox();
             this.txtruta = new System.Windows.Forms.TextBox();
-            this.btnseleccionararchivo = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtidarchivo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label56 = new System.Windows.Forms.Label();
-            this.iconolimpiar2 = new System.Windows.Forms.PictureBox();
             this.btnguardararchivo = new System.Windows.Forms.Button();
             this.dgvarchivos = new System.Windows.Forms.DataGridView();
             this.btneditararchivos = new System.Windows.Forms.Button();
             this.btneliminararchivos = new System.Windows.Forms.Button();
             this.comboBox33 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.iconolimpiar2 = new System.Windows.Forms.PictureBox();
+            this.btnseleccionararchivo = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvarchivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionararchivo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvarchivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // label12
@@ -118,7 +120,7 @@
             this.btnanotaciones.Name = "btnanotaciones";
             this.btnanotaciones.Size = new System.Drawing.Size(186, 36);
             this.btnanotaciones.TabIndex = 45;
-            this.btnanotaciones.Text = " ANOTACIONES";
+            this.btnanotaciones.Text = "NOTAS";
             this.btnanotaciones.UseVisualStyleBackColor = false;
             this.btnanotaciones.Click += new System.EventHandler(this.btnanotaciones_Click);
             // 
@@ -151,60 +153,6 @@
             this.txtruta.Name = "txtruta";
             this.txtruta.Size = new System.Drawing.Size(291, 22);
             this.txtruta.TabIndex = 49;
-            // 
-            // btnseleccionararchivo
-            // 
-            this.btnseleccionararchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(138)))), ((int)(((byte)(219)))));
-            this.btnseleccionararchivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnseleccionararchivo.Image = global::UsersPanel.Properties.Resources.subir1;
-            this.btnseleccionararchivo.Location = new System.Drawing.Point(1407, 275);
-            this.btnseleccionararchivo.Name = "btnseleccionararchivo";
-            this.btnseleccionararchivo.Size = new System.Drawing.Size(34, 34);
-            this.btnseleccionararchivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnseleccionararchivo.TabIndex = 50;
-            this.btnseleccionararchivo.TabStop = false;
-            this.btnseleccionararchivo.Click += new System.EventHandler(this.btnseleccionararchivo_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Location = new System.Drawing.Point(1094, 60);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(368, 499);
-            this.pictureBox2.TabIndex = 47;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.Image = global::UsersPanel.Properties.Resources.logo;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 60);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(74, 66);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 42;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1470, 66);
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1462, 60);
-            this.pictureBox3.TabIndex = 39;
-            this.pictureBox3.TabStop = false;
             // 
             // label4
             // 
@@ -275,19 +223,6 @@
             this.label56.TabIndex = 56;
             this.label56.Text = "Seleccione el usuario al que adjuntar un archivo:  ";
             // 
-            // iconolimpiar2
-            // 
-            this.iconolimpiar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.iconolimpiar2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconolimpiar2.Image = global::UsersPanel.Properties.Resources.clear;
-            this.iconolimpiar2.Location = new System.Drawing.Point(1420, 66);
-            this.iconolimpiar2.Name = "iconolimpiar2";
-            this.iconolimpiar2.Size = new System.Drawing.Size(34, 34);
-            this.iconolimpiar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.iconolimpiar2.TabIndex = 61;
-            this.iconolimpiar2.TabStop = false;
-            this.iconolimpiar2.Click += new System.EventHandler(this.iconolimpiar2_Click);
-            // 
             // btnguardararchivo
             // 
             this.btnguardararchivo.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -347,12 +282,13 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvarchivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvarchivos.RowHeadersVisible = false;
-            this.dgvarchivos.RowHeadersWidth = 20;
+            this.dgvarchivos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
             this.dgvarchivos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvarchivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvarchivos.Size = new System.Drawing.Size(1055, 343);
             this.dgvarchivos.TabIndex = 63;
             this.dgvarchivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvarchivos_CellContentClick);
@@ -423,12 +359,93 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // iconolimpiar2
+            // 
+            this.iconolimpiar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.iconolimpiar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconolimpiar2.Image = global::UsersPanel.Properties.Resources.clear;
+            this.iconolimpiar2.Location = new System.Drawing.Point(1420, 66);
+            this.iconolimpiar2.Name = "iconolimpiar2";
+            this.iconolimpiar2.Size = new System.Drawing.Size(34, 34);
+            this.iconolimpiar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.iconolimpiar2.TabIndex = 61;
+            this.iconolimpiar2.TabStop = false;
+            this.iconolimpiar2.Click += new System.EventHandler(this.iconolimpiar2_Click);
+            // 
+            // btnseleccionararchivo
+            // 
+            this.btnseleccionararchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(138)))), ((int)(((byte)(219)))));
+            this.btnseleccionararchivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnseleccionararchivo.Image = global::UsersPanel.Properties.Resources.subir1;
+            this.btnseleccionararchivo.Location = new System.Drawing.Point(1407, 275);
+            this.btnseleccionararchivo.Name = "btnseleccionararchivo";
+            this.btnseleccionararchivo.Size = new System.Drawing.Size(34, 34);
+            this.btnseleccionararchivo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnseleccionararchivo.TabIndex = 50;
+            this.btnseleccionararchivo.TabStop = false;
+            this.btnseleccionararchivo.Click += new System.EventHandler(this.btnseleccionararchivo_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Location = new System.Drawing.Point(1094, 60);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(368, 499);
+            this.pictureBox2.TabIndex = 47;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
+            this.pictureBox4.Image = global::UsersPanel.Properties.Resources.logo;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 60);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(74, 66);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 42;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 60);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1470, 66);
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1462, 60);
+            this.pictureBox3.TabIndex = 39;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::UsersPanel.Properties.Resources.mensajes;
+            this.pictureBox5.Location = new System.Drawing.Point(1404, 4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 68;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1462, 559);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox33);
             this.Controls.Add(this.btneliminararchivos);
@@ -460,13 +477,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvarchivos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionararchivo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvarchivos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,5 +517,6 @@
         private System.Windows.Forms.Button btneliminararchivos;
         private System.Windows.Forms.ComboBox comboBox33;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

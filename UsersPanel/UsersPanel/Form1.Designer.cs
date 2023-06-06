@@ -55,12 +55,16 @@ namespace UsersPanel
             this.buttonanotaciones = new System.Windows.Forms.Button();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.btnarchivos = new System.Windows.Forms.Button();
+            this.btnanadirnota = new System.Windows.Forms.Button();
+            this.btnanadirarchivo = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.iconolimpiar = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -171,6 +175,10 @@ namespace UsersPanel
             // 
             // dgvusuarios
             // 
+            this.dgvusuarios.AllowUserToAddRows = false;
+            this.dgvusuarios.AllowUserToDeleteRows = false;
+            this.dgvusuarios.AllowUserToResizeColumns = false;
+            this.dgvusuarios.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvusuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvusuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -201,7 +209,7 @@ namespace UsersPanel
             this.dgvusuarios.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvusuarios.EnableHeadersVisualStyles = false;
             this.dgvusuarios.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvusuarios.Location = new System.Drawing.Point(21, 143);
+            this.dgvusuarios.Location = new System.Drawing.Point(12, 143);
             this.dgvusuarios.Name = "dgvusuarios";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -219,10 +227,12 @@ namespace UsersPanel
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
             this.dgvusuarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvusuarios.Size = new System.Drawing.Size(1055, 343);
+            this.dgvusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvusuarios.Size = new System.Drawing.Size(1070, 343);
             this.dgvusuarios.TabIndex = 25;
             this.dgvusuarios.TabStop = false;
             this.dgvusuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvusuarios_CellContentClick);
+            this.dgvusuarios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvusuarios_CellFormatting);
             // 
             // label12
             // 
@@ -323,7 +333,7 @@ namespace UsersPanel
             this.buttonanotaciones.Name = "buttonanotaciones";
             this.buttonanotaciones.Size = new System.Drawing.Size(186, 36);
             this.buttonanotaciones.TabIndex = 41;
-            this.buttonanotaciones.Text = "ANOTACIONES";
+            this.buttonanotaciones.Text = "NOTAS";
             this.buttonanotaciones.UseVisualStyleBackColor = false;
             this.buttonanotaciones.Click += new System.EventHandler(this.buttonanotaciones_Click);
             // 
@@ -349,6 +359,49 @@ namespace UsersPanel
             this.btnarchivos.Text = "ARCHIVOS";
             this.btnarchivos.UseVisualStyleBackColor = false;
             this.btnarchivos.Click += new System.EventHandler(this.btnarchivos_Click);
+            // 
+            // btnanadirnota
+            // 
+            this.btnanadirnota.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnanadirnota.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnanadirnota.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnanadirnota.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnanadirnota.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnanadirnota.Location = new System.Drawing.Point(1114, 450);
+            this.btnanadirnota.Name = "btnanadirnota";
+            this.btnanadirnota.Size = new System.Drawing.Size(165, 36);
+            this.btnanadirnota.TabIndex = 44;
+            this.btnanadirnota.Text = "AÑADIR NOTA";
+            this.btnanadirnota.UseVisualStyleBackColor = false;
+            this.btnanadirnota.Click += new System.EventHandler(this.btnanadirnota_Click);
+            // 
+            // btnanadirarchivo
+            // 
+            this.btnanadirarchivo.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnanadirarchivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnanadirarchivo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnanadirarchivo.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnanadirarchivo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnanadirarchivo.Location = new System.Drawing.Point(1285, 450);
+            this.btnanadirarchivo.Name = "btnanadirarchivo";
+            this.btnanadirarchivo.Size = new System.Drawing.Size(165, 36);
+            this.btnanadirarchivo.TabIndex = 45;
+            this.btnanadirarchivo.Text = "AÑADIR ARCHIVO";
+            this.btnanadirarchivo.UseVisualStyleBackColor = false;
+            this.btnanadirarchivo.Click += new System.EventHandler(this.btnanadirarchivo_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::UsersPanel.Properties.Resources.mensajes;
+            this.pictureBox5.Location = new System.Drawing.Point(1404, 4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 46;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // iconolimpiar
             // 
@@ -410,6 +463,9 @@ namespace UsersPanel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1462, 559);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.btnanadirarchivo);
+            this.Controls.Add(this.btnanadirnota);
             this.Controls.Add(this.btnarchivos);
             this.Controls.Add(this.iconolimpiar);
             this.Controls.Add(this.buttonanotaciones);
@@ -440,6 +496,7 @@ namespace UsersPanel
             this.Text = "UsersPanel";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -475,6 +532,9 @@ namespace UsersPanel
         private PictureBox iconolimpiar;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private Button btnarchivos;
+        private Button btnanadirnota;
+        private Button btnanadirarchivo;
+        private PictureBox pictureBox5;
     }
 }
 

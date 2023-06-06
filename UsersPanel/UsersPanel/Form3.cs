@@ -26,6 +26,9 @@ namespace UsersPanel
             llenarComboBox();
         }
 
+        /**
+         * MÉTODO QUE LLENA EL COMBOBOX CON LOS NOMBRES DE LOS USUARIOS DE LA BASE DE DATOS
+         */
         private void llenarComboBox()
         {
             comboBox1.Items.Clear();
@@ -49,6 +52,9 @@ namespace UsersPanel
             comboBox1.DataSource = dt;
         }
 
+        /**
+         * MÉTODO QUE ABRE EL EXPLORADOR DE ARCHIVOS Y INTRODUCE LA RUTA EN EL TEXTBOX CORRESPONDIENTE
+         */
         private void btnseleccionararchivo_Click(object sender, EventArgs e)
         {
             string rutaArchivo = string.Empty;
@@ -63,11 +69,17 @@ namespace UsersPanel
             txtruta.Text = rutaArchivo;
         }
 
+        /**
+         * MÉTODO QUE ABRE UN ARCHIVO SEGÚN LA RUTA ESCRITA EN EL TEXTBOX
+         */
         private void button1_Click(object sender, EventArgs e)
         {
             Process.Start(txtruta.Text);
         }
 
+        /**
+         * MÉTODO QUE ENVÍA LOS DATOS QUE COGE DE LOS TEXTBOX PARA GUARDARLOS EN LA BASE DE DATOS
+         */
         private void btnguardararchivo_Click(object sender, EventArgs e)
         {
             try
@@ -100,6 +112,9 @@ namespace UsersPanel
             }
         }
 
+        /**
+         * MÉTODO QUE LLAMA AL MÉTODO QUE LISTA LOS DATOS EN EL DATAGRIDVIEW
+         */
         private void mostrar_archivos()
         {
             dgvarchivos.DataSource = null;
@@ -110,6 +125,9 @@ namespace UsersPanel
             dgvarchivos.Columns[4].Width = 200;
         }
 
+        /**
+         * MÉTODO QUE LIMPIA LOS DATOS DE LOS TEXTBOX
+         */
         private void limpiar()
         {
             txtidarchivo.Text = "";
@@ -119,6 +137,9 @@ namespace UsersPanel
             txtnombrearchivo.Focus();
         }
 
+        /**
+         * MÉTODO QUE LLAMA AL MÉTODO QUE LISTA LOS DATOS Y CARGA EL FORMULARIO
+         */
         private void Form3_Load(object sender, EventArgs e)
         {
             mostrar_archivos();
@@ -127,6 +148,9 @@ namespace UsersPanel
             this.txtruta.Size = new System.Drawing.Size(291, 34);
         }
 
+        /**
+         * MÉTODO QUE COGE LOS NUEVOS DATOS INTRODUCIDOS Y LOS EDITA
+         */
         private void btneditararchivos_Click(object sender, EventArgs e)
         {
             try
@@ -160,6 +184,9 @@ namespace UsersPanel
             }
         }
 
+        /**
+         * MÉTODO QUE MANDA EL ID SELECCIONADO PARA SER BORRADO
+         */
         private void btneliminararchivos_Click(object sender, EventArgs e)
         {
             try
@@ -191,6 +218,9 @@ namespace UsersPanel
             }
         }
 
+        /**
+         * MÉTODO ENCARGADO DE BUSCAR EN EL DATAGRIDVIEW LOS DATOS INTRODUCIDOS POR EL BUSCADOR Y FILTRANDO POR EL COMBOBOX
+         */ 
         private void txtbuscadorarchivos_TextChanged(object sender, EventArgs e)
         {
             try
@@ -224,6 +254,9 @@ namespace UsersPanel
             }
         }
 
+        /**
+         * MÉTODO QUE CUANDO SE PULSA EN UNA CELDA, COGE LOS DATOS DE LA FILA Y SE LAS PASA A LOS TEXTBOX
+         */
         private void dgvarchivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -242,6 +275,9 @@ namespace UsersPanel
             catch (Exception ex) {}
         }
 
+        /**
+         * MÉTODO QUE CAMBIA LOS ESTILOS DEL DATAGRIDVIEW
+         */
         private void dgvarchivos_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvarchivos.Columns[e.ColumnIndex].Name == "Ruta")
@@ -250,6 +286,9 @@ namespace UsersPanel
             }
         }
 
+        /**
+         * MÉTODO QUE CAMBIA DE LA VISTA ARCHIVOS A LA VISTA REGISTROS
+         */
         private void btnregistros_Click(object sender, EventArgs e)
         {
             UsersPanel ventana1 = new UsersPanel();
@@ -257,6 +296,9 @@ namespace UsersPanel
             ventana1.Show();
         }
 
+        /**
+         * MÉTODO QUE CAMBIA DE LA VISRA ARCHIVOS A LA VISTA DE NOTAS
+         */
         private void btnanotaciones_Click(object sender, EventArgs e)
         {
             Form2 ventana2 = new Form2();
@@ -264,9 +306,21 @@ namespace UsersPanel
             ventana2.Show();
         }
 
+        /**
+         * MÉTODO QUE LLAMA AL MÉTODO QUE LIMPIA LOS TEXTBOX
+         */
         private void iconolimpiar2_Click(object sender, EventArgs e)
         {
             limpiar();
+        }
+
+        /**
+         * MÉTODO QUE ABRE LA VENTANA DE MENSAJES
+         */
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            FormMensajes mensajes = new FormMensajes();
+            mensajes.Show();
         }
     }
 }

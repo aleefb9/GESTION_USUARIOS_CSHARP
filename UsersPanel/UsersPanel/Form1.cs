@@ -15,6 +15,7 @@ using System.Data.SQLite;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Diagnostics;
 
 namespace UsersPanel
 {
@@ -27,6 +28,9 @@ namespace UsersPanel
             InitializeComponent();
         }
 
+        /**
+         * MÉTOTO ENCARGADO DE ENVIAR LOS DATOS PARA QUE SE GUARDEN EN LA BASE DE DATOS AL PULSAR EL BOTÓN "GUARDAR"
+         */
         private void btnguardar_Click(object sender, EventArgs e)
         {
             Usuario objeto = new Usuario()
@@ -59,12 +63,18 @@ namespace UsersPanel
             }
         }
 
+        /**
+         * MÉTODO ENCARGADO DE LLAMAR AL MÉTODO QUE LISTA LSO DATOS DE LA BBDD EN EL DATAGRIDVIEW
+         */
         public void mostrar_usuarios()
         {
             dgvusuarios.DataSource = null;
             dgvusuarios.DataSource = UsuarioLogica.Instancia.Listar();
         }
 
+        /**
+         * MÉTODO QUE LIMPIA LOS TEXTBOX DEL FORMULARIO 
+         */
         public void limpiar()
         {
             txtidusuario.Text = "";
@@ -74,11 +84,17 @@ namespace UsersPanel
             txtnombre.Focus();
         }
 
+        /**
+         * MÉTODO QUE LLAMA AL MÉTODO QU LISTA LOS DATOS Y CARGA EL FORMULARIO
+         */
         private void Form1_Load(object sender, EventArgs e)
         {
             mostrar_usuarios();    
         }
 
+        /**
+         * MÉTODO QUE ENVÍA LOS NUEVOS DATOS MODIFICADOS PARA QUE SE EDITEN EN LA BASE DE DATOS AL PULSAR EL BOTÓN "EDITAR"
+         */
         private void btneditar_Click(object sender, EventArgs e)
         {
             try
@@ -113,6 +129,9 @@ namespace UsersPanel
             }
         }
 
+        /**
+         * MÉTODO QUE SE ENCARGA DE MANDAR EL ID SELECCIONADO PARA QUE SEA ELIMINADO AL PULSAR EL BOTÓN "ELIMINAR"
+         */
         private void btneliminar_Click(object sender, EventArgs e)
         {
             try {
@@ -143,6 +162,9 @@ namespace UsersPanel
             }
         }
 
+        /**
+         * MÉTODO ENCARGADO DE BUSCAR EL TEXTO INTRODUCIDO EN EL TEXTBOX BUSCAODR FILTRANDO POR LA OPCIÓN SELECCIONADA EN EL COMBOBOX
+         */
         private void txtbuscador_TextChanged(object sender, EventArgs e)
         {
             try
@@ -173,14 +195,53 @@ namespace UsersPanel
             }   
         }
 
+        /**
+         * MÉTODO QUE ESCRIBE LA INFORMACIÓN DE UNA FILA EN LOS TEXTBOX CUANDO HACES CLICK EN ELLAS
+         */
         private void dgvusuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtidusuario.Text = dgvusuarios.CurrentRow.Cells[0].Value.ToString();
-            txtnombre.Text = dgvusuarios.CurrentRow.Cells[1].Value.ToString();
-            txtdepartamento.Text = dgvusuarios.CurrentRow.Cells[2].Value.ToString();
-            txtinicio.Text = dgvusuarios.CurrentRow.Cells[5].Value.ToString();
+            try
+            {
+                txtidusuario.Text = dgvusuarios.CurrentRow.Cells[0].Value.ToString();
+                txtnombre.Text = dgvusuarios.CurrentRow.Cells[1].Value.ToString();
+                txtdepartamento.Text = dgvusuarios.CurrentRow.Cells[2].Value.ToString();
+                txtinicio.Text = dgvusuarios.CurrentRow.Cells[5].Value.ToString();
+
+                if (e.ColumnIndex == this.dgvusuarios.Columns["Nombre"].Index)
+                {
+                    abrir_detalles();
+                }
+            }
+            catch (Exception ex) { }
         }
 
+        /**
+         * MÉTODO QUE REALIZA MODIFICACIONES VISUALES EN EL DATAGRIDVIEW 
+         */
+        private void dgvusuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvusuarios.Columns[e.ColumnIndex].Name == "Nombre")
+            {
+                e.CellStyle.ForeColor = Color.Blue;
+            }
+        }
+
+        /**
+         * MÉTODO QUE ABRE LA VENTANA DE DETALLES DE UN USUARIO Y PASA SU ID AL HACRER CLICK EN EL
+         */
+        public void abrir_detalles()
+        {
+            string IdUsuario = dgvusuarios.CurrentRow.Cells[0].Value.ToString();
+            string nombreUsuario = dgvusuarios.CurrentRow.Cells[1].Value.ToString();
+            string departamento = dgvusuarios.CurrentRow.Cells[2].Value.ToString();
+            string fechaInicio = dgvusuarios.CurrentRow.Cells[4].Value.ToString();
+            Detalles detalles = new Detalles(IdUsuario, nombreUsuario, departamento, fechaInicio);
+            detalles.Show();
+        }
+
+        /**
+         * MÉTODO QUE CAMBIA LA VENTANA PRINCIPAL POR LA DE NOTAS
+         */
         private void buttonanotaciones_Click(object sender, EventArgs e)
         {
             Form2 ventana2 = new Form2();
@@ -188,6 +249,9 @@ namespace UsersPanel
             ventana2.Show();
         }
 
+        /**
+         * MÉTODO QUE CAMBIA LA VENTANA PRINCIPAR POR LA DE ARCHIVOS
+         */
         private void btnarchivos_Click(object sender, EventArgs e)
         {
             Form3 ventana3 = new Form3();
@@ -195,6 +259,36 @@ namespace UsersPanel
             ventana3.Show();
         }
 
+        /**
+         * MÉTODO QUE ABRE EL FORMULARIO PARA AÑADIR UNA NOTA
+         */
+        private void btnanadirnota_Click(object sender, EventArgs e)
+        {
+            FormAnadirNota anadirNotas = new FormAnadirNota();
+            anadirNotas.Show();
+        }
+
+        /**
+         * MÉTODO QUE ABRE EL FORMULARIO PARA AÑADIR ARCHIVOS
+         */
+        private void btnanadirarchivo_Click(object sender, EventArgs e)
+        {
+            FormAnadirArchivo anadirNotas = new FormAnadirArchivo();
+            anadirNotas.Show();
+        }
+
+        /**
+         * MÉTODO QUE ABRE LA VENTANA QUE MUESTRA LOS MENSAJES 
+         */
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            FormMensajes mensajes = new FormMensajes();
+            mensajes.Show();
+        }
+
+        /**
+         * MÉTODO QUE LLAMA AL MÉTODO QUE LIMPIA LOS TEXTBOX AL PULSAR EL BOTÓN DE LIMPIAR
+         */
         private void iconolimpiar_Click(object sender, EventArgs e)
         {
             limpiar();

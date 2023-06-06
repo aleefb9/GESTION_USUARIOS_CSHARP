@@ -28,6 +28,9 @@ namespace UsersPanel.Logica
             }
         }
 
+        /**
+         * MÉTODO QUE GUARDA LOS ARCHIVOS EN LA BASE DE DATOS 
+         */
         public bool Guardar(Archivo obj)
         {
             bool respuesta = true;
@@ -53,6 +56,9 @@ namespace UsersPanel.Logica
             return respuesta;
         }
 
+        /**
+         * MÉTODO QUE LISTA LOS ARCHIVOS EN EL DATAGRIDVIEW
+         */
         public List<Archivo> Listar()
         {
             List<Archivo> oLista = new List<Archivo>();
@@ -84,6 +90,9 @@ namespace UsersPanel.Logica
             return oLista;
         }
 
+        /**
+         * MÉTODO QUE EDITA LOS ARCHIVOS AL SELECCIONAR UNO
+         */
         public bool Editar(Archivo obj)
         {
             bool respuesta = true;
@@ -109,6 +118,9 @@ namespace UsersPanel.Logica
             return respuesta;
         }
 
+        /**
+         * MÉTODO QUE ELIMINA EL ARCHIVO SELECCIONADO
+         */
         public bool Eliminar(Archivo obj)
         {
             bool respuesta = true;

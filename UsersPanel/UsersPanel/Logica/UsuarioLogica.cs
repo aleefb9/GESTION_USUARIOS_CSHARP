@@ -28,6 +28,9 @@ namespace UsersPanel.Logica
             }
         }
 
+        /**
+         * MÉTODO QUE GUARDA EN LA BASE DE DATOS LOS DATOS DE USUARIO RECIBIDOS 
+         */
         public bool Guardar(Usuario obj)
         {
             bool respuesta = true;
@@ -37,7 +40,6 @@ namespace UsersPanel.Logica
                 conexion.Open();
                 string query = "INSERT INTO Usuarios(Nombre, Departamento, Semanas, FechaIncorporacion, FechaInicio, Fecha2meses, Fecha3meses, Fecha4meses, Fecha5meses, Fecha6meses ) " +
                                 "VALUES (@nombre,@departamento,@semanas,@fechaincorporacion,@fechainicio,@fecha2meses,@fecha3meses,@fecha4meses,@fecha5meses,@fecha6meses)";
-
 
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                 cmd.Parameters.Add(new SQLiteParameter("@nombre", obj.Nombre));
@@ -61,6 +63,9 @@ namespace UsersPanel.Logica
             return respuesta;   
         }
 
+        /**
+         * MÉTODO QUE SACA DE LA BASE DE DATOS LOS DATOS DE USUARIO Y LOS LISTA EN EL DATAGRIDVIEW
+         */
         public List<Usuario> Listar()
         {
             List<Usuario> oLista = new List<Usuario>();
@@ -75,7 +80,9 @@ namespace UsersPanel.Logica
 
                 using (SQLiteDataReader dr = cmd.ExecuteReader())
                 {
-                    while (dr.Read()) {
+                    while (dr.Read())
+                    {
+                        //Cálculo del número de total de semanas
                         DateTime FechaInicio = Convert.ToDateTime(dr["FechaInicio"]);
                         DateTime FechaHoy = DateTime.Today;
                         TimeSpan difFechas = FechaHoy - FechaInicio;
@@ -99,10 +106,12 @@ namespace UsersPanel.Logica
                     }
                 }
             }
-
             return oLista;
         }
 
+        /**
+         * MÉTODO QUE EDITA LOS USUARIOS CON LOS NUEVOS DATOS ENVIADOS
+         */
         public bool Editar(Usuario obj)
         {
             bool respuesta = true;
@@ -126,10 +135,12 @@ namespace UsersPanel.Logica
                     respuesta = false;
                 }
             }
-
             return respuesta;
         }
 
+        /**
+         * MÉTODO QUE ELIMINA AL USUARIO SELECCIONADO
+         */
         public bool Eliminar(Usuario obj)
         {
             bool respuesta = true;
@@ -138,7 +149,6 @@ namespace UsersPanel.Logica
             {
                 conexion.Open();
                 string query = "DELETE FROM Usuarios WHERE Id = @idusuario";
-
 
                 SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                 cmd.Parameters.Add(new SQLiteParameter("@idusuario", obj.IdUsuario));

@@ -73,6 +73,16 @@ namespace UsersPanel.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap exit {
+            get {
+                object obj = ResourceManager.GetObject("exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_file_icon_1453_thumb {
             get {
                 object obj = ResourceManager.GetObject("free-file-icon-1453-thumb", resourceCulture);
@@ -106,6 +116,26 @@ namespace UsersPanel.Properties {
         internal static System.Drawing.Bitmap logotipo_mecalux1 {
             get {
                 object obj = ResourceManager.GetObject("logotipo-mecalux1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mensaje {
+            get {
+                object obj = ResourceManager.GetObject("mensaje", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mensajes {
+            get {
+                object obj = ResourceManager.GetObject("mensajes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

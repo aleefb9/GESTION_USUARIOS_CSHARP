@@ -43,3 +43,7 @@ C:\Users\alejandro.fernandez\source\repos\GESTION_USUARIOS_CSHARP\UsersPanel\Use
 C:\Users\alejandro.fernandez\source\repos\GESTION_USUARIOS_CSHARP\UsersPanel\UsersPanel\obj\Debug\UsersPanel.exe
 C:\Users\alejandro.fernandez\source\repos\GESTION_USUARIOS_CSHARP\UsersPanel\UsersPanel\obj\Debug\UsersPanel.pdb
 C:\Users\alejandro.fernandez\source\repos\GESTION_USUARIOS_CSHARP\UsersPanel\UsersPanel\obj\Debug\UsersPanel.Form3.resources
+C:\Users\alejandro.fernandez\source\repos\GESTION_USUARIOS_CSHARP\UsersPanel\UsersPanel\obj\Debug\UsersPanel.FormAnadirNota.resources
+C:\Users\alejandro.fernandez\source\repos\GESTION_USUARIOS_CSHARP\UsersPanel\UsersPanel\obj\Debug\UsersPanel.FormAnadirArchivo.resources
+C:\Users\alejandro.fernandez\source\repos\GESTION_USUARIOS_CSHARP\UsersPanel\UsersPanel\obj\Debug\UsersPanel.Detalles.resources
+C:\Users\alejandro.fernandez\source\repos\GESTION_USUARIOS_CSHARP\UsersPanel\UsersPanel\obj\Debug\UsersPanel.FormMensajes.resources

@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detalles.Designer.cs">
+      <DependentUpon>Detalles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,14 +91,37 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAnadirArchivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnadirArchivo.Designer.cs">
+      <DependentUpon>FormAnadirArchivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAnadirNota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnadirNota.Designer.cs">
+      <DependentUpon>FormAnadirNota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMensajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMensajes.Designer.cs">
+      <DependentUpon>FormMensajes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logica\ArchivoLogica.cs" />
+    <Compile Include="Logica\MensajeLogica.cs" />
     <Compile Include="Logica\NotaLogica.cs" />
     <Compile Include="Logica\UsuarioLogica.cs" />
     <Compile Include="Modelo\Archivo.cs" />
+    <Compile Include="Modelo\Mensajes.cs" />
     <Compile Include="Modelo\Nota.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Detalles.resx">
+      <DependentUpon>Detalles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +130,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnadirArchivo.resx">
+      <DependentUpon>FormAnadirArchivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnadirNota.resx">
+      <DependentUpon>FormAnadirNota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMensajes.resx">
+      <DependentUpon>FormMensajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -129,6 +167,9 @@
     <None Include="Resources\free-file-icon-1453-thumb.png" />
     <None Include="Resources\subir.jpg" />
     <None Include="Resources\subir.png" />
+    <None Include="Resources\mensaje.png" />
+    <None Include="Resources\mensajes.png" />
+    <None Include="Resources\exit.png" />
     <Content Include="UsersDB.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

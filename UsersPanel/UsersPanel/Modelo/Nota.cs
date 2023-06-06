@@ -13,5 +13,6 @@ namespace UsersPanel.Modelo
         public string Descripcion { get; set; }
         public int IdUsuario { get; set; }
         public string Usuario { get; set; }
+        public string FechaGuardado { get; set; }   
     }
 }
