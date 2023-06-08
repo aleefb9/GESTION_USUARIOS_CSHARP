@@ -25,6 +25,9 @@ namespace UsersPanel
             llenarComboBox();
         }
 
+        /**
+         * MÉTODO QUE RELLENA EL COMBOBOX CON LOS NOMBRES DE LOS USUARIOS DE LA BASE DE DATOS
+         */
         private void llenarComboBox()
         {
             comboBox1.Items.Clear();
@@ -48,6 +51,9 @@ namespace UsersPanel
             comboBox1.DataSource = dt;
         }
 
+        /**
+         * MÉTODO QUE ABRE EL EXPLORADOR DE ARCHIVOS 
+         */
         private void btnseleccionararchivo_Click(object sender, EventArgs e)
         {
             string rutaArchivo = string.Empty;
@@ -62,11 +68,21 @@ namespace UsersPanel
             txtruta.Text = rutaArchivo;
         }
 
+        /**
+         * MÉTODO QUE REVISA LA RUTA DEL ARCHIVO ESCRITA EN EL TXTRUTA
+         */
         private void button1_Click(object sender, EventArgs e)
         {
-            Process.Start(txtruta.Text);
+            try
+            {
+                Process.Start(txtruta.Text);
+            }
+            catch {}
         }
 
+        /**
+         * MÉTODO QUE LIMPIA LOS CAMPOS DEL FORMULARIO
+         */
         private void limpiar()
         {
             txtnombrearchivo.Text = "";
@@ -75,17 +91,26 @@ namespace UsersPanel
             txtnombrearchivo.Focus();
         }
 
+        /**
+         * MÉTODO QUE CIERRA EL FORMULARIO EL PULSAR EN EL BOTÓN
+         */
         private void cerrar()
         {
-            this.Hide();
+            this.Close();
         }
 
+        /**
+         * MÉTODO QUE CARGA EL FORMULARIO
+         */
         private void FormAnadirArchivo_Load(object sender, EventArgs e)
         {
             this.txtruta.AutoSize = false;
             this.txtruta.Size = new System.Drawing.Size(376, 34);
         }
 
+        /**
+         * MÉTODO QUE MANDA LOS DATOS AL MÉTODO QUE GUARDA LOS DATOS EN LA BASE DE DATOS
+         */
         private void btnguardarnota_Click(object sender, EventArgs e)
         {
             try
@@ -118,9 +143,44 @@ namespace UsersPanel
             }
         }
 
+        /**
+         * MÉTODO QUE CIERRA LA VENTANA
+         */
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();   
+            cerrar();
+        }
+
+        //Declaramos las variables que arrastraran la ventana
+        int m, mx, my;
+
+        /**
+         * MÉTODO QUE DETECTA CUANDO EL RATÓN ESTÁ PULSADO
+         */
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            m = 1;
+            mx = e.X;
+            my = e.Y;
+        }
+
+        /**
+         * MÉTODO QUE MUEVE EL SITIO QUE PULSA EL RATÓN
+         */
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (m == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - mx, MousePosition.Y - my);
+            }
+        }
+
+        /**
+         * MÉTODO QUE DETECTA QUE EL RATÓN YA NO ESTÁ PULSADO
+         */
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            m = 0;
         }
     }
 }

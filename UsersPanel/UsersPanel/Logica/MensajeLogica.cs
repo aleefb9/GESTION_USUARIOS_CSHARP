@@ -66,7 +66,7 @@ namespace UsersPanel.Logica
                                 Mensaje = "Faltan " + (-1 * dias2meses) + " días para los 2 meses",
                             });
                         }
-                        if (dias4meses > -7 && dias4meses < 0)
+                        else if (dias4meses > -7 && dias4meses < 0)
                         {
                             oLista.Add(new Modelo.Mensajes()
                             {
@@ -75,7 +75,7 @@ namespace UsersPanel.Logica
                                 Mensaje = "Faltan " + (-1 * dias4meses) + " días para los 4 meses",
                             });
                         }
-                        if (dias6meses > -7 && dias6meses < 0)
+                        else if(dias6meses > -7 && dias6meses < 0)
                         {
                             oLista.Add(new Modelo.Mensajes()
                             {
@@ -84,10 +84,36 @@ namespace UsersPanel.Logica
                                 Mensaje = "Faltan " + (-1 * dias6meses) + " días para los 6 meses",
                             });
                         }
+                        else if(dias2meses == 0)
+                        {
+                            oLista.Add(new Modelo.Mensajes()
+                            {
+                                Usuario = dr["Nombre"].ToString(),
+                                FechaInicio = dr["FechaInicio"].ToString(),
+                                Mensaje = "Hoy cumple 2 meses",
+                            });
+                        }
+                        else if(dias4meses == 0)
+                        {
+                            oLista.Add(new Modelo.Mensajes()
+                            {
+                                Usuario = dr["Nombre"].ToString(),
+                                FechaInicio = dr["FechaInicio"].ToString(),
+                                Mensaje = "Hoy cumple 4 meses",
+                            });
+                        }
+                        else if(dias6meses == 0)
+                        {
+                            oLista.Add(new Modelo.Mensajes()
+                            {
+                                Usuario = dr["Nombre"].ToString(),
+                                FechaInicio = dr["FechaInicio"].ToString(),
+                                Mensaje = "Hoy cumple 6 meses",
+                            });
+                        }
                     }
                 }
             }
-
             return oLista;
         }
     }

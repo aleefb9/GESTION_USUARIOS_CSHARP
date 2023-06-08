@@ -170,6 +170,7 @@
     <None Include="Resources\mensaje.png" />
     <None Include="Resources\mensajes.png" />
     <None Include="Resources\exit.png" />
+    <None Include="Resources\mensajes2.png" />
     <Content Include="UsersDB.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

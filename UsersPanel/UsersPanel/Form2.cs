@@ -118,6 +118,13 @@ namespace UsersPanel
         private void Form2_Load(object sender, EventArgs e)
         {
             mostrar_notas();
+            dgvnotas.Columns[0].Visible = false;
+            labelNoRegistros.Hide();
+            if (dgvnotas.RowCount == 0)
+            {
+                dgvnotas.Hide();
+                labelNoRegistros.Show();
+            }
         }
 
         /**
@@ -219,6 +226,7 @@ namespace UsersPanel
                     dgvnotas.Columns[1].Width = 150;
                     dgvnotas.Columns[3].Width = 200;
                     dgvnotas.AllowUserToAddRows = false;
+                    dgvnotas.Columns[0].Visible = false;
                 }
             }
             catch (Exception ex)

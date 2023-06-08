@@ -74,7 +74,11 @@ namespace UsersPanel
          */
         private void button1_Click(object sender, EventArgs e)
         {
-            Process.Start(txtruta.Text);
+            try
+            {
+                Process.Start(txtruta.Text);
+            }
+            catch { }
         }
 
         /**
@@ -110,6 +114,8 @@ namespace UsersPanel
             {
                 MessageBox.Show("Debe rellenar los campos obligatorios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            this.Refresh();
         }
 
         /**
@@ -146,6 +152,14 @@ namespace UsersPanel
 
             this.txtruta.AutoSize = false;
             this.txtruta.Size = new System.Drawing.Size(291, 34);
+            dgvarchivos.Columns[0].Visible = false;
+
+            labelNoRegistros.Hide();
+            if (dgvarchivos.RowCount == 0)
+            {
+                dgvarchivos.Hide();
+                labelNoRegistros.Show();
+            }
         }
 
         /**
@@ -205,6 +219,7 @@ namespace UsersPanel
                     {
                         limpiar();
                         mostrar_archivos();
+                        this.Refresh();
                     }
                 }
                 else if (result == DialogResult.Cancel)
@@ -246,6 +261,7 @@ namespace UsersPanel
                     dgvarchivos.Columns[1].Width = 150;
                     dgvarchivos.Columns[3].Width = 200;
                     dgvarchivos.AllowUserToAddRows = false;
+                    dgvarchivos.Columns[0].Visible = false;
                 }
             }
             catch (Exception ex)

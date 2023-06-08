@@ -88,6 +88,20 @@ namespace UsersPanel
 
             dgvrutas.ClearSelection();
             dgvrutas.CurrentCell = null;
+
+            labelNoNotas.Hide();
+            if (dgvNotas.RowCount == 0)
+            {
+                dgvNotas.Hide();
+                labelNoNotas.Show();
+            }
+
+            labelNoArchvios.Hide();
+            if (dgvrutas.RowCount == 0)
+            {
+                dgvrutas.Hide();
+                labelNoArchvios.Show();
+            }
         }
 
         /**
@@ -118,6 +132,39 @@ namespace UsersPanel
         private void pictureBox10_Click(object sender, EventArgs e)
         {
             this.Close();   
+        }
+
+
+        //Declaramos las variables que arrastraran la ventana
+        int m, mx, my;
+
+        /**
+         * MÉTODO QUE DETECTA CUANDO EL RATÓN ESTÁ PULSADO
+         */
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            m = 1;
+            mx = e.X;   
+            my = e.Y;   
+        }
+
+        /**
+         * MÉTODO QUE MUEVE EL SITIO QUE PULSA EL RATÓN
+         */
+        private void pictureBox3_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (m == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X -mx, MousePosition.Y -my);
+            }
+        }
+
+        /**
+         * MÉTODO QUE DETECTA QUE EL RATÓN YA NO ESTÁ PULSADO
+         */
+        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
+        {
+            m = 0;
         }
     }
 }

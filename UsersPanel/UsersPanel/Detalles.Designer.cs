@@ -60,6 +60,8 @@
             this.labelPerfil = new System.Windows.Forms.Label();
             this.labelInicio = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.labelNoArchvios = new System.Windows.Forms.Label();
+            this.labelNoNotas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvrutas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,7 +83,7 @@
             this.dgvrutas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvrutas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvrutas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvrutas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
+            this.dgvrutas.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvrutas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvrutas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvrutas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -141,6 +143,9 @@
             this.pictureBox3.Size = new System.Drawing.Size(949, 60);
             this.pictureBox3.TabIndex = 39;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseDown);
+            this.pictureBox3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseMove);
+            this.pictureBox3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseUp);
             // 
             // labelDetalles
             // 
@@ -173,7 +178,7 @@
             this.dgvNotas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvNotas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNotas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvNotas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
+            this.dgvNotas.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvNotas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvNotas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvNotas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -224,7 +229,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
+            this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
             this.label1.Location = new System.Drawing.Point(423, 242);
@@ -236,7 +241,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
+            this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(42)))), ((int)(((byte)(60)))));
             this.label2.Location = new System.Drawing.Point(423, 58);
@@ -392,13 +397,41 @@
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
+            // labelNoArchvios
+            // 
+            this.labelNoArchvios.AutoSize = true;
+            this.labelNoArchvios.BackColor = System.Drawing.Color.IndianRed;
+            this.labelNoArchvios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelNoArchvios.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoArchvios.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelNoArchvios.Location = new System.Drawing.Point(553, 321);
+            this.labelNoArchvios.Name = "labelNoArchvios";
+            this.labelNoArchvios.Size = new System.Drawing.Size(265, 27);
+            this.labelNoArchvios.TabIndex = 62;
+            this.labelNoArchvios.Text = "Este usuario no tiene archivos";
+            // 
+            // labelNoNotas
+            // 
+            this.labelNoNotas.AutoSize = true;
+            this.labelNoNotas.BackColor = System.Drawing.Color.IndianRed;
+            this.labelNoNotas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelNoNotas.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoNotas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelNoNotas.Location = new System.Drawing.Point(567, 130);
+            this.labelNoNotas.Name = "labelNoNotas";
+            this.labelNoNotas.Size = new System.Drawing.Size(241, 27);
+            this.labelNoNotas.TabIndex = 63;
+            this.labelNoNotas.Text = "Este usuario no tiene notas";
+            // 
             // Detalles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(949, 443);
             this.ControlBox = false;
+            this.Controls.Add(this.labelNoNotas);
+            this.Controls.Add(this.labelNoArchvios);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.labelInicio);
             this.Controls.Add(this.labelPerfil);
@@ -420,7 +453,7 @@
             this.Controls.Add(this.dgvrutas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Detalles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -465,5 +498,7 @@
         private System.Windows.Forms.Label labelPerfil;
         private System.Windows.Forms.Label labelInicio;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label labelNoArchvios;
+        private System.Windows.Forms.Label labelNoNotas;
     }
 }

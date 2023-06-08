@@ -58,6 +58,7 @@
             this.pictureBox90 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.labelNoRegistros = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvnotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -217,6 +218,7 @@
             this.dgvnotas.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvnotas.Location = new System.Drawing.Point(21, 143);
             this.dgvnotas.Name = "dgvnotas";
+            this.dgvnotas.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -407,12 +409,26 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
+            // labelNoRegistros
+            // 
+            this.labelNoRegistros.AutoSize = true;
+            this.labelNoRegistros.BackColor = System.Drawing.Color.White;
+            this.labelNoRegistros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelNoRegistros.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoRegistros.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelNoRegistros.Location = new System.Drawing.Point(392, 278);
+            this.labelNoRegistros.Name = "labelNoRegistros";
+            this.labelNoRegistros.Size = new System.Drawing.Size(353, 39);
+            this.labelNoRegistros.TabIndex = 63;
+            this.labelNoRegistros.Text = "No se han encontrado notas";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1462, 559);
+            this.Controls.Add(this.labelNoRegistros);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.btnarchivos);
             this.Controls.Add(this.iconolimpiar2);
@@ -480,5 +496,6 @@
         private System.Windows.Forms.PictureBox iconolimpiar2;
         private System.Windows.Forms.Button btnarchivos;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label labelNoRegistros;
     }
 }

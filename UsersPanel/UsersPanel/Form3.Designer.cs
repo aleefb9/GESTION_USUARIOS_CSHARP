@@ -60,6 +60,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.labelNoRegistros = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvarchivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnseleccionararchivo)).BeginInit();
@@ -240,6 +241,10 @@
             // 
             // dgvarchivos
             // 
+            this.dgvarchivos.AllowUserToAddRows = false;
+            this.dgvarchivos.AllowUserToDeleteRows = false;
+            this.dgvarchivos.AllowUserToResizeColumns = false;
+            this.dgvarchivos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvarchivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvarchivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -272,6 +277,7 @@
             this.dgvarchivos.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvarchivos.Location = new System.Drawing.Point(21, 143);
             this.dgvarchivos.Name = "dgvarchivos";
+            this.dgvarchivos.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -439,12 +445,26 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
+            // labelNoRegistros
+            // 
+            this.labelNoRegistros.AutoSize = true;
+            this.labelNoRegistros.BackColor = System.Drawing.Color.White;
+            this.labelNoRegistros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelNoRegistros.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoRegistros.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelNoRegistros.Location = new System.Drawing.Point(383, 275);
+            this.labelNoRegistros.Name = "labelNoRegistros";
+            this.labelNoRegistros.Size = new System.Drawing.Size(385, 39);
+            this.labelNoRegistros.TabIndex = 69;
+            this.labelNoRegistros.Text = "No se han encontrado archivos";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1462, 559);
+            this.Controls.Add(this.labelNoRegistros);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox33);
@@ -518,5 +538,6 @@
         private System.Windows.Forms.ComboBox comboBox33;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label labelNoRegistros;
     }
 }

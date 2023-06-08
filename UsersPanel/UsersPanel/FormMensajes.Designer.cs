@@ -42,10 +42,13 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dgvusuarios = new System.Windows.Forms.DataGridView();
             this.dgvmensajes = new System.Windows.Forms.DataGridView();
+            this.labelNoMensajes = new System.Windows.Forms.Label();
+            this.imagenMensaje = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmensajes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenMensaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -123,7 +126,7 @@
             this.dgvmensajes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvmensajes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvmensajes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvmensajes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
+            this.dgvmensajes.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvmensajes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvmensajes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvmensajes.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -152,6 +155,7 @@
             this.dgvmensajes.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvmensajes.Location = new System.Drawing.Point(0, 60);
             this.dgvmensajes.Name = "dgvmensajes";
+            this.dgvmensajes.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +175,30 @@
             this.dgvmensajes.Size = new System.Drawing.Size(718, 398);
             this.dgvmensajes.TabIndex = 42;
             this.dgvmensajes.TabStop = false;
+            // 
+            // labelNoMensajes
+            // 
+            this.labelNoMensajes.AutoSize = true;
+            this.labelNoMensajes.BackColor = System.Drawing.Color.White;
+            this.labelNoMensajes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelNoMensajes.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoMensajes.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelNoMensajes.Location = new System.Drawing.Point(247, 96);
+            this.labelNoMensajes.Name = "labelNoMensajes";
+            this.labelNoMensajes.Size = new System.Drawing.Size(215, 34);
+            this.labelNoMensajes.TabIndex = 64;
+            this.labelNoMensajes.Text = "No tiene mensajes";
+            // 
+            // imagenMensaje
+            // 
+            this.imagenMensaje.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.imagenMensaje.Image = global::UsersPanel.Properties.Resources.mensajes2;
+            this.imagenMensaje.Location = new System.Drawing.Point(58, 133);
+            this.imagenMensaje.Name = "imagenMensaje";
+            this.imagenMensaje.Size = new System.Drawing.Size(593, 268);
+            this.imagenMensaje.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imagenMensaje.TabIndex = 65;
+            this.imagenMensaje.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -195,6 +223,9 @@
             this.pictureBox3.Size = new System.Drawing.Size(718, 60);
             this.pictureBox3.TabIndex = 39;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseDown);
+            this.pictureBox3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseMove);
+            this.pictureBox3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox3_MouseUp);
             // 
             // FormMensajes
             // 
@@ -203,12 +234,14 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(718, 458);
             this.ControlBox = false;
+            this.Controls.Add(this.imagenMensaje);
+            this.Controls.Add(this.labelNoMensajes);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvmensajes);
             this.Controls.Add(this.dgvusuarios);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.pictureBox3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMensajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -216,6 +249,7 @@
             this.Load += new System.EventHandler(this.FormMensajes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmensajes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenMensaje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
@@ -230,5 +264,7 @@
         private System.Windows.Forms.DataGridView dgvusuarios;
         private System.Windows.Forms.DataGridView dgvmensajes;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelNoMensajes;
+        private System.Windows.Forms.PictureBox imagenMensaje;
     }
 }

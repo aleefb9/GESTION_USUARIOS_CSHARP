@@ -63,6 +63,7 @@ namespace UsersPanel
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelNoRegistros = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconolimpiar)).BeginInit();
@@ -211,6 +212,7 @@ namespace UsersPanel
             this.dgvusuarios.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvusuarios.Location = new System.Drawing.Point(12, 143);
             this.dgvusuarios.Name = "dgvusuarios";
+            this.dgvusuarios.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -457,12 +459,26 @@ namespace UsersPanel
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
             // 
+            // labelNoRegistros
+            // 
+            this.labelNoRegistros.AutoSize = true;
+            this.labelNoRegistros.BackColor = System.Drawing.Color.White;
+            this.labelNoRegistros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelNoRegistros.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNoRegistros.ForeColor = System.Drawing.Color.IndianRed;
+            this.labelNoRegistros.Location = new System.Drawing.Point(365, 278);
+            this.labelNoRegistros.Name = "labelNoRegistros";
+            this.labelNoRegistros.Size = new System.Drawing.Size(390, 39);
+            this.labelNoRegistros.TabIndex = 47;
+            this.labelNoRegistros.Text = "No se han encontrado registros";
+            // 
             // UsersPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(197)))), ((int)(((byte)(221)))));
             this.ClientSize = new System.Drawing.Size(1462, 559);
+            this.Controls.Add(this.labelNoRegistros);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.btnanadirarchivo);
             this.Controls.Add(this.btnanadirnota);
@@ -535,6 +551,7 @@ namespace UsersPanel
         private Button btnanadirnota;
         private Button btnanadirarchivo;
         private PictureBox pictureBox5;
+        private Label labelNoRegistros;
     }
 }
 

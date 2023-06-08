@@ -24,6 +24,9 @@ namespace UsersPanel
             llenarComboBox();
         }
 
+        /**
+         * MÉTODO QUE LLENA EL COMBOBOX CON LOS NOMBRES DE LOS USUARIOS 
+         */
         private void llenarComboBox()
         {
             comboBox1.Items.Clear();
@@ -47,6 +50,9 @@ namespace UsersPanel
             comboBox1.DataSource = dt;
         }
 
+        /**
+         * MÉTODO QUE LIMPIA LOS CAMPOS DE LOS TEXTBOX DEL FORMULARIO
+         */
         private void limpiar()
         {
             txttitulo.Text = "";
@@ -55,11 +61,17 @@ namespace UsersPanel
             txttitulo.Focus();
         }
 
+        /**
+         * MÉTODO QUE OCULTA LA VENTANA
+         */
         private void cerrar()
         {
-            this.Hide();
+            this.Close();
         }
 
+        /**
+         * MÉTODO QUE ENVÍA LOS DATOS AL MÉTODO QUE LOS GUARDA EN LA BASE DE DATOS
+         */
         private void btnguardarnota_Click(object sender, EventArgs e)
         {
             try
@@ -93,9 +105,44 @@ namespace UsersPanel
             }
         }
 
+        /**
+         * MÉTODO QUE CIERRA LA VENTANA
+         */
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            cerrar();
+        }
+
+        //Declaramos las variables que arrastraran la ventana
+        int m, mx, my;
+
+        /**
+         * MÉTODO QUE DETECTA CUANDO EL RATÓN ESTÁ PULSADO
+         */
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            m = 1;
+            mx = e.X;
+            my = e.Y;
+        }
+
+        /**
+         * MÉTODO QUE MUEVE EL SITIO QUE PULSA EL RATÓN
+         */
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (m == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - mx, MousePosition.Y - my);
+            }
+        }
+
+        /**
+         * MÉTODO QUE DETECTA QUE EL RATÓN YA NO ESTÁ PULSADO
+         */
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            m = 0;
         }
     }
 }

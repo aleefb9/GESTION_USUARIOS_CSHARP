@@ -89,7 +89,14 @@ namespace UsersPanel
          */
         private void Form1_Load(object sender, EventArgs e)
         {
-            mostrar_usuarios();    
+            mostrar_usuarios();
+            dgvusuarios.Columns[0].Visible = false;
+            labelNoRegistros.Hide();
+            if (dgvusuarios.RowCount == 0)
+            {
+                dgvusuarios.Hide();
+                labelNoRegistros.Show();
+            }
         }
 
         /**
@@ -187,6 +194,7 @@ namespace UsersPanel
                     dgvusuarios.DataSource = data;
                     dgvusuarios.DataMember = "Usuarios";
                     dgvusuarios.AllowUserToAddRows = false;
+                    dgvusuarios.Columns[0].Visible = false;
                 }
             }
             catch (Exception ex)
